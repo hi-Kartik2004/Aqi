@@ -98,13 +98,25 @@ session_start();
                                                 <div class="f-pricing-card-title-wrapper">
                                                     <div class="div-block">
                                                         <div class="f-pricing-plan-type-wrapper">
-                                                            <h5 class="f-h5-heading">#97.2</h5>
+                                                            <h5 class="f-h5-heading">#<?php if (isset($_SESSION['c_response'])) {
+                                                                                            $r_data = $_SESSION['c_response'];
+                                                                                            $city = $r_data['data'][0]['aqi'];
+                                                                                            echo $city;
+                                                                                        } ?></h5>
                                                             <div class="f-badge-filled">
                                                                 <div>Current AQI</div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="f-pricing-price-text">DELHI<span class="f-pricing-month-span">/Place</span></div>
+                                                    <div class="f-pricing-price-text"><?php if (isset($_SESSION['c_response'])) {
+                                                                                            $r_data = $_SESSION['c_response'];
+                                                                                            $city = $r_data['city_name'];
+                                                                                            echo $city;
+                                                                                        } ?><span class="f-pricing-month-span">/<?php if (isset($_SESSION['c_response'])) {
+                                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                                    $city = $r_data['country_code'];
+                                                                                                                                    echo $city;
+                                                                                                                                } ?></span></div>
                                                 </div>
                                                 <div class="f-pricing-divider"></div>
                                                 <div class="w-layout-grid f-pricing-feature-grid">
@@ -113,45 +125,69 @@ session_start();
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">Co Rating : </div>
+                                                        <div class="f-paragraph-small card-text">Co Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['co'];
+                                                                                                                    echo $city;
+                                                                                                                } ?></div>
                                                     </div>
                                                     <div id="w-node-eced649b-1019-6299-d976-33c1d0ab959b-09c5cc4b" class="f-pricing-feature-item">
                                                         <div class="f-icon-regular w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">Pm 25 Rating : </div>
+                                                        <div class="f-paragraph-small card-text">Pm 25 Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['pm25'];
+                                                                                                                    echo $city;
+                                                                                                                } ?> </div>
                                                     </div>
                                                     <div id="w-node-eced649b-1019-6299-d976-33c1d0ab959f-09c5cc4b" class="f-pricing-feature-item">
                                                         <div class="f-icon-regular w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">No2 Rating : </div>
+                                                        <div class="f-paragraph-small card-text">No2 Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['no2'];
+                                                                                                                    echo $city;
+                                                                                                                } ?> </div>
                                                     </div>
                                                     <div id="w-node-eced649b-1019-6299-d976-33c1d0ab95a3-09c5cc4b" class="f-pricing-feature-item">
                                                         <div class="f-icon-regular w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">Pm 10 Rating :</div>
+                                                        <div class="f-paragraph-small card-text">Pm 10 Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['pm10'];
+                                                                                                                    echo $city;
+                                                                                                                } ?></div>
                                                     </div>
                                                     <div id="w-node-eced649b-1019-6299-d976-33c1d0ab95a7-09c5cc4b" class="f-pricing-feature-item">
                                                         <div class="f-icon-regular w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">O3 Rating :</div>
+                                                        <div class="f-paragraph-small card-text">O3 Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['o3'];
+                                                                                                                    echo $city;
+                                                                                                                } ?></div>
                                                     </div>
                                                     <div id="w-node-eced649b-1019-6299-d976-33c1d0ab95ab-09c5cc4b" class="f-pricing-feature-item">
                                                         <div class="f-icon-regular w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect x="2" y="2" width="20" height="20" rx="10" fill="#F3F5FB" />
                                                                 <path d="M10.9003 14.118L17.3999 8L18.4004 8.94102L10.9003 16L6.40039 11.7647L7.40021 10.8237L10.9003 14.118Z" fill="#160042" />
                                                             </svg></div>
-                                                        <div class="f-paragraph-small card-text">So2 Rating :</div>
+                                                        <div class="f-paragraph-small card-text">So2 Rating : <?php if (isset($_SESSION['c_response'])) {
+                                                                                                                    $r_data = $_SESSION['c_response'];
+                                                                                                                    $city = $r_data['data'][0]['so2'];
+                                                                                                                    echo $city;
+                                                                                                                } ?></div>
                                                     </div>
                                                 </div>
-                                                <div class="f-line-large"><a href="#" class="link-3">Know more</a></div>
+                                                <div class="f-line-large"><a href="api_response.php" class="link-3">Know more</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -259,7 +295,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div data-w-tab="Tab 3" class="f-tab-pane w-tab-pane w--tab-active">
+            <div data-w-tab="Tab 3" class="f-tab-pane w-tab-pane w--tab">
                 <div class="f-section-large-2">
                     <div class="f-container-regular">
                         <div class="w-layout-grid f-contact-grid">

@@ -3,8 +3,9 @@
 function fetchCurrentAqi($long, $lati)
 {
     $curl = curl_init();
+
     curl_setopt_array($curl, [
-        CURLOPT_URL => "https://air-quality.p.rapidapi.com/current/airquality?lon=" . $long . "&lat=" . $lati,
+        CURLOPT_URL => "https://air-quality.p.rapidapi.com/forecast/airquality?lat=35.779&lon=-78.638&hours=25",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_ENCODING => "",
@@ -26,14 +27,8 @@ function fetchCurrentAqi($long, $lati)
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-        // $output = json_decode($response);
-        // echo "This is the json format of the response";
-        // echo $response;
-        // echo "<br>";
-
         $response = json_decode($api_response, true);
         print_r($response);
-
         return $response;
     }
 
